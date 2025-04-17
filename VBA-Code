@@ -1,0 +1,12 @@
+Sub AnfrageSpeichern()
+    Dim letzteZeile As Long
+    letzteZeile = Sheets("Anfragen").Cells(Rows.Count, 1).End(xlUp).Row + 1
+
+    Sheets("Anfragen").Cells(letzteZeile, 1).Value = Now
+    Sheets("Anfragen").Cells(letzteZeile, 2).Value = Range("B2").Value ' Name
+    Sheets("Anfragen").Cells(letzteZeile, 3).Value = Range("B3").Value ' Anliegen
+    Sheets("Anfragen").Cells(letzteZeile, 4).Value = Range("B4").Value ' Priorität
+    Sheets("Anfragen").Cells(letzteZeile, 5).Value = "Offen"
+    
+    MsgBox "Anfrage wurde gespeichert!"
+End Sub
